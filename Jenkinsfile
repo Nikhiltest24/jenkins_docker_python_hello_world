@@ -4,7 +4,7 @@ pipeline {
 		DOCKER_IMAGE = 'hello-world-python:latest'
 	}
 	stages {
-		stage('checkout'){
+		stage('Checkout'){
 			steps {
 				git branch: 'main', url:'https://github.com/Nikhiltest24/jenkins_docker_python_hello_world.git'
 			}
