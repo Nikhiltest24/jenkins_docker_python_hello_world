@@ -11,11 +11,14 @@ pipeline {
 		}
 		stage('Docker Build'){
 			steps {
-				if (fileExists(Dockerfile)){
-					sh "docker build -t ${env.DOCKER_IMAGE} ."
-				}
-				else {
-					error "Dockerfile not found."
+				
+				script{
+					if (fileExists("Dockerfile")){
+						sh "docker build -t ${env.DOCKER_IMAGE} ."
+					}
+					else {
+						error "Dockerfile not found."
+					}
 				}
 			}
 		}
