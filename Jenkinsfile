@@ -1,4 +1,4 @@
-pieline {
+pipeline {
 	agent any
 	environment {
 		DOCKER_IMAGE = 'hello-world-python:latest'
